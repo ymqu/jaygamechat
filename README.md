@@ -1,0 +1,34 @@
+# jaygamechat
+Display "hello netty"
+
+Netty:
+  Netty is NIO client server framework. It greatly simplifies and streamlines network programming such TCP and UDP socket server.
+  Aslo privde HTTP&Websocket, SSL, Google Protobuf, RTSP, Large file Transfer, Zlib/gzip compression, Legacy Text -Binary Protocols supports.
+  Transport Services: socket&Datagram, HTTP Tunnel, In-VM Pipe
+  Performance:
+	Better throughput, lower latency
+	Less resource comsumption
+	Minimized unnecessary memory copy
+
+Difference NIO and IO
+  NIO means the thread will not wait for the resource While it request resource which is using by other thread. the thread will continue to ask for other resource,
+  IO means the thread will wait for the requested resource until it released by other thread. 
+
+Difference synchonize and asynchonize:
+ synchonize which means must have ack to continue; asynchonize. AJAX is sample of NIO.
+BIO (block IO):Sychonize IO
+  Synchonize IO, jdk1.4. for example: one server deal with multiple clients. Server will create and destroy connection often and cause resource pressure. In the mean time, BIO will bring in thread pool to release pressure.
+NIO(Non-block IO):sychonize NIO
+  selector, channel, buffer
+  When client intents to build connection with server, client has to register on selector and selector will create a channel which transfer data between c/s by buffer.
+AIO:Sychonize NIO
+   Notify client when client request has done. 
+
+
+Step 1: Hello Netty
+  1.Build master/slave thread pool
+  2.BootStrapServer define
+  3.Set channels
+  4.Define a class that Initialize handlers.Function as inteceptor.
+  5.Start listener.
+  6. run as localhost:8088
